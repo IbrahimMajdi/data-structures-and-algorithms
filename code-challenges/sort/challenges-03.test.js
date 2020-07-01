@@ -61,6 +61,11 @@ Write a function named sortByLength that takes in an array of strings and return
 
 const sortByLength = (arr) => {
   // Solution code here...
+  arr.sort((a, b) => {
+
+    return b.length < a.length
+  });
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -73,6 +78,10 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 
 const alphabetizeBetter = (arr) => {
   // Solution code here...
+  arr.sort((a, b) => {
+
+    return b.length < a.length
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -90,6 +99,10 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
   // Solution code here...
+  arr.for((a, b) => {
+
+    return a.price > b.price
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
