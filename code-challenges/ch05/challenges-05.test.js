@@ -135,13 +135,15 @@ const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
   recipe.ingredients.forEach(item => {
-    
-    
+    applicationCache
+    let a = item.slice(item.indexOf(" ") + 1);
+    let b = a.slice(a.indexOf(" ") + 1);
+    result.push(b);
   })
   return result;
 };
 
-0
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
 
