@@ -26,9 +26,8 @@ const createServer = () => {
   const app = express();
 
   // Routes go here
-  app.get('/events', (request, response) => {
-    response.send(getCurrentEvents());
-  })
+  app.get('/events', getCurrentEvents);
+
   // Solution code here...
 
   var server = app.listen(3301, function () {
@@ -164,8 +163,8 @@ const currentEvents = {
 
 function getCurrentEvents(request, response) {
   // Solution code here...
-  response.send(mapCurrentEvents());
-  
+  mapCurrentEvents();
+
 }
 
 const mapCurrentEvents = () => {
@@ -197,7 +196,14 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
-};
+  let all
+  arr.reduce((acc, curr) => {
+
+  all= arr.indexOf(curr)+1
+   return all
+  })
+  return all
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
