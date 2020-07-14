@@ -8,7 +8,19 @@ Build a simple express server. Connect a '/hello' route that sends a greeting of
 
 const createServer = () => {
   // Solution code here...
+  app.get('/hello',(req,res)=>{
+    res.send('aaaaaaaaahhhh')
+  })
+  app.get('/aboutme',(req,res)=>{
+    res.send('I am dev')
+  })
+  app.get('/favoritefoods',(req,res)=>{
+    res.send(['botato','batata','beteto'])
+  })
 
+  app.get('*',(req,res)=>{
+    res.status('404')
+  })
   var server = app.listen(3301, function () {
     var port = server.address().port;
     console.log('Example app listening at port', port);
@@ -28,6 +40,8 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   // Solution code here...
+  const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
