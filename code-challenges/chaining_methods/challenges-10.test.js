@@ -6,8 +6,13 @@ CHALLENGE 1 - Review
 Build a simple express server. Connect a '/hello' route that sends a greeting of your  choice. Connect a '/aboutme' route that sends a short bio about you to the front-end. Finally, connect a '/favoritefoods' route that sends an array to the front-end of your favorite foods. All other routes should respond with a status of 404.
 ------------------------------------------------------------------------------------------------ */
 
+
 const createServer = () => {
   // Solution code here...
+
+  const express = require('express');
+  const app = express();
+
   app.get('/hello',(req,res)=>{
     res.send('aaaaaaaaahhhh')
   })
@@ -40,8 +45,16 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   // Solution code here...
-  const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
-
+  let occ=[]
+  input.map(a => {
+    // console.log(a)
+    a.reduce((acc,curr)=>{
+      if( curr === target){
+         occ.push(curr)
+      }
+    },0)
+    })
+    return occ.length
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -56,8 +69,10 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 
 const totalSum = (input) => {
   // Solution code here...
-  var x = array.reduce( (a, b) => a.concat(b))
+  var x = input.reduce( (a, b) => a.concat(b))
   .reduce( (a, b) => a + b )
+
+  return x
 };
 
 /* ------------------------------------------------------------------------------------------------
